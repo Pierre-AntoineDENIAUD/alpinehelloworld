@@ -12,7 +12,7 @@ pipeline {
              agent any
              steps {
                 script {
-                  sh 'docker build -t ${votre_id_dockerhub}/${IMAGE_NAME}:${IMAGE_TAG} .'
+                  sh 'docker build -t ${ID_DOCKER}/${IMAGE_NAME}:${IMAGE_TAG} .'
                 }
              }
         }
