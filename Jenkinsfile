@@ -20,7 +20,7 @@ pipeline {
             agent any
             steps {
                script {
-                 sh 'curl http://172.17.0.1 | grep -q "Hello world!"'
+                 sh 'docker run -d -p 80:5000 -e PORT=5000 --name ${IMAGE_NAME} ${ID_DOCKER}/${IMAGE_NAME}:${IMAGE_TAG} '
 
                }
             }
