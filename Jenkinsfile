@@ -12,7 +12,7 @@ pipeline {
              agent any
              steps {
                 script {
-                  sh 'docker build '
+                  sh 'docker build -t ${votre_id_dockerhub}/${IMAGE_NAME}:${IMAGE_TAG} .'
                 }
              }
         }
@@ -20,9 +20,8 @@ pipeline {
             agent any
             steps {
                script {
-                 sh '''
+                 sh 'curl http://172.17.0.1 | grep -q "Hello world!"'
 
-                 '''
                }
             }
        }
@@ -30,8 +29,8 @@ pipeline {
            agent any
            steps {
               script {
-                sh '''
-                '''
+                sh 'curl http://172.17.0.1 | grep -q "Hello world!"'
+               
               }
            }
       }
